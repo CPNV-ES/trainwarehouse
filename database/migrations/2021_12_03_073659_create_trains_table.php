@@ -15,24 +15,29 @@ class CreateTrainsTable extends Migration
     {
         Schema::create('trains', function (Blueprint $table) {
             $table->id();
-            $table->string('manufacturer');
-            $table->date('constructed');
-            $table->integer('capacity');
+            $table->string('manufacturer')->nullable();
+            $table->date('constructed')->nullable();
+            $table->date('start_service')->nullable();
+            $table->date('end_service')->nullable();
+            $table->integer('car')->nullable();
+            $table->integer('capacity')->nullable();
+            $table->integer('capacity_first')->nullable();
+            $table->integer('capacity_second')->nullable();
             $table->string('operator'); //TODO There can be multiple, need to be another table later
             $table->string('name');
-            $table->integer('length_m');
-            $table->integer('width_mm');
-            $table->integer('height_mm');
-            $table->integer('max_speed');
-            $table->integer('weight_t');
+            $table->float('length_m')->nullable();
+            $table->integer('width_mm')->nullable();
+            $table->integer('height_mm')->nullable();
+            $table->integer('max_speed')->nullable();
+            $table->integer('weight_t')->nullable();
             $table->string('motor_type'); // TODO need to be another table later
-            $table->integer('power_output_ac');
-            $table->integer('power_output_dc');
-            $table->integer('tractive_force');
+            $table->integer('power_output_ac')->nullable();
+            $table->integer('power_output_dc')->nullable();
+            $table->integer('tractive_force')->nullable();
             $table->string('electric_system'); // TODO need to be another table later
             $table->string('current_collection'); // TODO need to be another table later
-            $table->string('uic_classification');
-            $table->integer('track_gauge_mm');
+            $table->string('uic_classification')->nullable();
+            $table->integer('track_gauge_mm')->nullable();
             $table->timestamps();
         });
     }
