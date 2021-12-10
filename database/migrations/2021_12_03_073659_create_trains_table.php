@@ -32,7 +32,6 @@ class CreateTrainsTable extends Migration
             $table->integer('power_output_ac')->nullable();
             $table->integer('power_output_dc')->nullable();
             $table->integer('tractive_force')->nullable();
-            $table->string('electric_system'); // TODO need to be another table later
             $table->string('current_collection'); // TODO need to be another table later
             $table->string('uic_classification')->nullable();
             $table->integer('track_gauge_mm')->nullable();
