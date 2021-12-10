@@ -29,7 +29,6 @@ class CreateTrainsTable extends Migration
             $table->integer('height_mm')->nullable();
             $table->integer('max_speed')->nullable();
             $table->integer('weight_t')->nullable();
-            $table->string('motor_type'); // TODO need to be another table later
             $table->integer('power_output_ac')->nullable();
             $table->integer('power_output_dc')->nullable();
             $table->integer('tractive_force')->nullable();
