@@ -23,7 +23,6 @@ class CreateTrainsTable extends Migration
             $table->integer('capacity')->nullable();
             $table->integer('capacity_first')->nullable();
             $table->integer('capacity_second')->nullable();
-            $table->string('operator'); //TODO There can be multiple, need to be another table later
             $table->string('name');
             $table->float('length_m')->nullable();
             $table->integer('width_mm')->nullable();
