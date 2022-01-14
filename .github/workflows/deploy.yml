@@ -24,4 +24,4 @@ jobs:
           username: ${{ secrets.DEPLOY_USER }}
           port: ${{ secrets.DEPLOY_PORT }}
           key: ${{ secrets.DEPLOY_KEY }}
-          script: "cd /var/www/ && git clone --branch develop git@github.com:CPNV-ES/trainwarehouse.git && ./trainwarehouse/.scripts/deploy.sh"
+          script: "cd /var/www/${{ secrets.APPNAME }} && source ./${{ secrets.APPNAME }}/.scripts/deploy.sh"
