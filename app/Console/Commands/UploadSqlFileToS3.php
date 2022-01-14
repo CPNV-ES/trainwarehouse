@@ -53,18 +53,18 @@ class UploadSqlFileToS3 extends Command
             ]
         ]);
 
-        $fileName = $this->argument('file');
+        $filePath = $this->argument('file');
 
         try
         {
-            if(!file_exists($fileName)) {
+            if(!file_exists($filePath)) {
                 throw new InvalidArgumentException('File not found');
             }
 
             $client->putObject([
                 'Bucket' => env('AWS_BUCKET'),
-                'Key'    => $fileName,
-                'Body'   => 'SQL file',
+                'Key'    => basename($filePath),
+                'SourceFile' => $filePath,
             ]);
 
             $this->info('File has been uploaded');
