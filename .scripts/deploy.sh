@@ -19,6 +19,9 @@ php artisan clear-compiled
 # Recreate cache
 php artisan optimize
 
+# Install packages
+yarn
+
 # Compile npm assets
 yarn prod
 
