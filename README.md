@@ -19,6 +19,8 @@ You need to have docker install you can follow  [this guide](https://docs.docker
 
 When it's done you need to copy the .env.example to .env and write the environment variable you want to use for DEV environment.
 
+> Don't forget to write the environment variables for AWS!
+
 The docker-compose will use .env file to setup container.
 
 ```
