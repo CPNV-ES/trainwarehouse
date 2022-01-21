@@ -32,5 +32,16 @@ composer install
 ./vendor/bin/sail up
 ```
 
+## Custom commands
 
+### Export database to SQL file
 
+```
+php artisan db:export
+```
+
+### Upload SQL file to Amazon S3
+
+```
+php artisan upload:s3 {filepath}
+```
