@@ -10,6 +10,9 @@ echo "Deployment started ..."
 # Pull the latest version of the app
 git pull origin develop
 
+# Create folder for sql dump
+mkdir -p storage/database/backup/
+
 # Install composer dependencies
 composer install --no-interaction --prefer-dist --optimize-autoloader
 
