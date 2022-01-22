@@ -11,7 +11,7 @@ class ExportDatabase extends Command
      *
      * @var string
      */
-    protected $signature = 'db:export';
+    protected $signature = 'db:export {name?}';
 
     /**
      * The console command description.
@@ -37,12 +37,13 @@ class ExportDatabase extends Command
      */
     public function handle()
     {
+        $filename = $this->argument('name') ?? date('Y-m-d_H-i-s') . '_' . time() . '.sql';
         $config = [
             'host' => env('DB_HOST'),
             'port' => env('DB_PORT'),
             'user' => 'root',
             'password' => env('DB_PASSWORD'),
-            'result-file' => storage_path('database/backup/'. date('Y-m-d_H-i-s') . '_' . time() . '.sql'),
+            'result-file' => storage_path('database/backup/'. $filename),
         ];
 
         $this->info('Exporting database...');
@@ -57,7 +58,7 @@ class ExportDatabase extends Command
 
         if(file_exists($config['result-file'])) {
             $this->info('Database exported successfully!');
-            return 'File as been exported';
+            return true;
         } else {
             $this->error('Database export failed!');
             return false;
