@@ -15,7 +15,7 @@ class CreateCurrentCollectorsTable extends Migration
     {
         Schema::create('current_collectors', function (Blueprint $table) {
             $table->id();
-            $table->int('length_mm');
+            $table->integer('length_mm');
             $table->string('type');
             $table->timestamps();
         });
