@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/export', function () {
+    $filename =  date('Y-m-d_H-i-s') . '_' . time() . '.sql';
+
+    Artisan::call('db:export', ['name' =>  $filename]);
+    Artisan::call('upload:s3', ['file' => 'database/backup/'. $filename]);
+
+    return "<pre>" . Artisan::output();
+});
