@@ -12,6 +12,7 @@ git pull origin develop
 
 # Create folder for sql dump
 mkdir -p storage/database/backup/
+sudo chown -R www-data:www-data storage
 
 # Install composer dependencies
 composer install --no-interaction --prefer-dist --optimize-autoloader
