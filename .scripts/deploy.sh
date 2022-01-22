@@ -13,7 +13,10 @@ git pull origin develop
 # Install composer dependencies
 composer install --no-interaction --prefer-dist --optimize-autoloader
 
+php artisan route:clear
+php artisan cache:clear
 php artisan config:cache
+php artisan view:clear
 
 # Clear the old cache
 php artisan clear-compiled
