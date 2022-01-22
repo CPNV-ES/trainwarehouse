@@ -53,7 +53,7 @@ class UploadSqlFileToS3 extends Command
             ]
         ]);
 
-        $filePath = $this->argument('file');
+        $filePath = storage_path($this->argument('file'));
 
         try
         {

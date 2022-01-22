@@ -34,6 +34,10 @@ composer install
 ./vendor/bin/sail up
 ```
 
+## Trigger database
+
+You can trigger the commande to export and upload database to s3 by calling the route `/export`
+
 ## Custom commands
 
 ### Export database to SQL file
