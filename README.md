@@ -51,3 +51,11 @@ php artisan db:export
 ```
 php artisan upload:s3 {filepath}
 ```
+
+## Connect to Amazon EC2 instance
+
+> Ask N. Glassey for the credentials.
+
+```
+ssh user@ip -i .ssh/keyfile
+```
